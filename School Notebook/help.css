@@ -1,0 +1,290 @@
+body{
+  background:smokedwhite;
+  height: 100vh;
+  
+}
+
+  .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link{
+    color: #F9F7F6;
+    margin-right: 20px;
+   font-size: 12px;
+   font-weight: bold;
+   
+  
+  }
+  .navbar-dark .navbar-nav .nav-link.active:hover{
+    border-bottom: 3px solid #E74C3C;
+    
+    color: #F9F7F6;; 
+  }
+  
+  .navbar-dark .navbar-nav .nav-link:hover{
+    border-bottom: 3px solid #E74C3C;
+    color: #F9F7F6;;
+  
+  }
+  .navbar-dark .navbar-nav .nav-link.active,.navbar-dark .navbar-nav .nav-link:focus{
+    border-bottom:none;
+  }
+
+nav ul li:last-child{
+    background-color: transparent;
+    border: 1px solid #F9F7F6;
+    border-radius: 10px;
+    padding-left: 20px;
+   
+  }
+  nav ul li:last-child:hover{
+background-color:#E74C3C;
+border-style: none;
+  }
+
+  #signin_navbar ul {
+   
+    background-color: #34495E;
+    padding: 2px 10px 2px 10px;
+    border-radius: 10px;
+    margin-right: 50px;
+   
+  }
+  .wrapper {
+    min-height: 100vh;
+    width: 100%;
+    background: #F9F7F6;
+    position: relative;
+    overflow: hidden;
+}
+
+/* svg {
+    position: absolute;
+    height: 600px;
+    right: 0;
+
+
+} */
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+.hero{
+    position: absolute;
+   
+}
+.hero img{
+    height: 450px;
+    width: auto;
+    margin-left:100%;
+    margin-top:15%;
+}
+.line{
+    border-left: 3px dashed #E74C3C;
+    height: 200px;
+    position: absolute;
+    top: 43%;
+    left: 30px;
+    animation: mymove 5s ease-in;
+  animation-fill-mode: forwards;
+  }
+
+  @keyframes mymove {
+    from {top: 0px;}
+    to {top: 43%; color: #F9F7F6;}
+  }
+.line::after{
+    content: '';
+    background:#E74C3C;
+    display:flex;
+    top:100%;
+    left: -6px;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    
+
+}
+.help-content{
+    position: absolute;  
+    width:400px; 
+    margin-top: 10%;
+    margin-left: 90px;
+}
+
+/* Footer */
+
+
+.site-footer
+{
+  font-family: DIN;
+  background-color:#0D0C0C;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer p{
+  color:gray;
+}
+.site-footer a
+{
+  color:#737373;
+}
+.site-footer a:hover
+{
+  color:#E74C3C;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block;
+  
+}
+.footer-links a
+{
+  color:gray;
+  text-decoration:none;
+}
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#E74C3C;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#E74C3C;
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+
+
+
+
