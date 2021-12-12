@@ -1,4 +1,7 @@
-<?php include('server.php');?>
+<?php 
+    include('server.php');
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,14 +12,14 @@
     <title>Document</title>
     <!--Font awesome CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-     <!-- bootstrap -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
-     </script>
-     <!-- css link  -->
-     <link rel="stylesheet" href="style.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+    <!-- css link  -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrapper">
@@ -87,22 +90,45 @@
                 <div class="col-6">
                     <form action="" method="POST" class="list">
                         <label for="assignment" class="form-label">Assignment/Task Name
-                            <input class="form-control" type="text" name="assignment" id="assignment">
+                            <input class="form-control" type="text" name="assignment" id="assignment" required>
                         </label><br>
                         <label class="input-group-text" for="selectcourse">Select Course</label>
-                            <select class="form-select" id="selectcourse" name="selectcourse">
-                                <option selected>Choose...</option>
-                                <option value="Back End Programming">Back End Programming</option>
+                            <select class="form-select" id="selectcourse" name="selectcourse" required>
+                                
+                                <option selected value="Back End Programming">Back End Programming</option>
                                 <option value="Capstone Web Site Design">Capstone Web Site Design</option>
                                 <option value="Web Content Management">Web Content Management</option>
                                 <option value="Career Launch">Career Launch</option>
                                 <option value="Database Design">Database Design</option>
                             </select><br>
                         <label for="duedate" class="form-label">Due Date
-                            <input class="form-control" type="date" name="duedate" id="duedate">
+                            <input class="form-control" type="date" name="duedate" id="duedate" required>
                         </label>
                         <input type="submit" name = "submit" class="btn btn-primary">
+                        <?php 
+                        if(isset($_POST['submit'])){
+                            $taskName = $_POST['assignment'];
+                            $dueDate = $_POST['duedate'];
+                            $course = $_POST['selectcourse'];
+                            $userName = $_SESSION['username'];
+                            // echo $taskName;
+                            // echo $course;
+                            // echo $dueDate;
+                            $db = mysqli_connect('localhost', 'root', '', 'register');
+                            // if($db){
+                            //     echo "database connected successfully";
+                            // }
+                            $data = "INSERT INTO userdata (userName, courseName, taskName, dueDate) VALUES ('$userName', '$course', '$taskName', '$dueDate')";
+                            $conn = mysqli_query($db, $data);
+                            if($conn){
+                                echo "Inserted Successfully";
+                            }else{
+                                echo "some error Occured";
+                            }
+                        }
+                    ?>
                     </form>
+                    
                 </div>
                 <div class="col-6">
                     <form action="course.php" method="GET" class="list">
